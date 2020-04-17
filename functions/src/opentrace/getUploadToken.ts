@@ -10,6 +10,7 @@ import formatTimestamp from "./utils/formatTimestamp";
  * Get upload token by passing in a secret string as `data`
  */
 const getUploadToken = async (uid: string, data: any, context: functions.https.CallableContext) => {
+  await storeUploadCodes(['1234']);
   console.log('getUploadToken:', 'uid', uid, 'data', data, 'ip', context.rawRequest.ip);
 
   let valid = false;
